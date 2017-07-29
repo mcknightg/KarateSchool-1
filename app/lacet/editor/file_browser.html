@@ -1,0 +1,36 @@
+<div class="tabbable skin-setttings">
+    <ul  class="nav nav-tabs" role="tablist">
+        <li>
+            <a class="active" data-target="#browse_files" data-toggle="tab">Browse</a>
+        </li>
+        <li>
+            <a class="" data-target="#upload_files" data-toggle="tab">Upload</a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active sortable" id="browse_files" role="tabpanel">
+            <div class="row tabbable skin-setttings">
+                <h4 id="dir">/</h4>
+                <div id='file-tree-holder' class="col-lg-7"></div>
+                <div id="fileDetail" class="col-lg-5"></div>
+            </div>
+        </div>
+        <div class="tab-pane" id="upload_files" role="tabpanel">
+            <div class="row">
+                <div class="col-lg-2">
+                    <h4 id="path">/</h4>
+                    <button id="newFolder">New Folder</button>
+                    <div id="folder-tree-holder">
+
+                    </div>
+                </div>
+                <div  class="col-lg-10">
+                    <input id="upload-files" name="file" multiple type="file" class="file file-loading" >
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+

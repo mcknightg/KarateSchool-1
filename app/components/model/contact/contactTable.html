@@ -1,0 +1,62 @@
+
+
+<div class="col-sm-5">
+    <form ng-submit="search()" >
+        <div class="input-group">
+            <input type="text" ng-model="srchterm" class="form-control" placeholder="Search " name="srchterm" id="srchterm">
+            <div class="input-group-btn">
+                <button ng-click="search()" class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<table class="table table-responsive table-hover table-striped push-down">
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>status</th>
+        <th>firstName</th>
+        <th>lastName</th>
+        <th>photoUrl</th>
+        <th>jobTitle</th>
+        <th>owner</th>
+        <th>createdAt</th>
+        <th>modifiedAt</th>
+        <th>note</th>
+        <th>imgSrc</th>
+        <th>companyName</th>
+        <th class="text-center"><button ng-click="new()" class="btn btn-sm btn-primary">ADD</button></th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr ng-show="(modelList.rows).length === 0">
+            <td colspan="10">No Records Found !</td>
+        </tr>
+        <tr ng-click="update(item.id)"  id="{{item.id}}" ng-repeat="item in modelList.rows">
+            <td>{{item.id}}</td>
+            <td>{{item.status}}</td>
+            <td>{{item.firstName}}</td>
+            <td>{{item.lastName}}</td>
+            <td>{{item.photoUrl}}</td>
+            <td>{{item.jobTitle}}</td>
+            <td>{{item.owner}}</td>
+            <td>{{item.createdAt}}</td>
+            <td>{{item.modifiedAt}}</td>
+            <td>{{item.note}}</td>
+            <td>{{item.imgSrc}}</td>
+            <td>{{item.companyName}}</td>
+
+            <td ng-click="remove(item.id)" class="text-center" ><i class="fa fa-trash fa-2x"></i></td>
+        </tr>
+    </tbody>
+</table>
+
+<pagination boundary-links="true" boundary-link-numbers="true" num-pages="modelList.totalpages" ng-model="modelList.currpage" ng-change="setPage(modelList.currpage)" max-size="5" total-items="modelList.totalrecords" items-per-page="listParams.rows"></pagination>
+
+<ul class="pagination pagination-sm pull-right">
+    <li>Page {{modelList.currpage}} of {{modelList.totalpages}} - {{modelList.totalrecords}} Records </li>
+</ul>
+
+<br>
+<br>
